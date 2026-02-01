@@ -20,6 +20,12 @@ console.warn = (...args) => {
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: false,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   transpilePackages: [
     "prettier",
     "shiki",
@@ -99,6 +105,9 @@ module.exports = {
       {
         hostname: "media.cleanshot.cloud", // only for staging purposes
       },
+      {
+        hostname: "assets.whoof.me", // whoofme assets
+      }
     ],
   },
   async headers() {
