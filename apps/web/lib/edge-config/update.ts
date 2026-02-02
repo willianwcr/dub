@@ -1,5 +1,3 @@
-import { get } from "@vercel/edge-config";
-
 export const updateConfig = async ({
   key,
   value,
@@ -17,10 +15,11 @@ export const updateConfig = async ({
     | "partnersPortal";
   value: string;
 }) => {
-  if (!process.env.EDGE_CONFIG_ID) {
+  if (!process.env.EDGE_CONFIG_ID || !process.env.AUTH_BEARER_TOKEN || !process.env.TEAM_ID_VERCEL) {
     return;
   }
 
+  const { get } = await import("@vercel/edge-config");
   const existingData = (await get(key)) as string[];
   const newData = Array.from(new Set([...existingData, value]));
 
