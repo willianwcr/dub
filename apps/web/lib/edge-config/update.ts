@@ -3,16 +3,16 @@ export const updateConfig = async ({
   value,
 }: {
   key:
-    | "domains"
-    | "whitelistedDomains"
-    | "terms"
-    | "referrers"
-    | "keys"
-    | "whitelist"
-    | "emails"
-    | "reserved"
-    | "reservedUsernames"
-    | "partnersPortal";
+  | "domains"
+  | "whitelistedDomains"
+  | "terms"
+  | "referrers"
+  | "keys"
+  | "whitelist"
+  | "emails"
+  | "reserved"
+  | "reservedUsernames"
+  | "partnersPortal";
   value: string;
 }) => {
   if (!process.env.EDGE_CONFIG_ID || !process.env.AUTH_BEARER_TOKEN || !process.env.TEAM_ID_VERCEL) {
