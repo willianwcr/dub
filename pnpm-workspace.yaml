@@ -3,3 +3,5 @@ packages:
   - "apps/web/.react-email"
   - "packages/*"
   - "packages/embeds/*"
+overrides:
+  '@tiptap/pm': '^3.15.3'
